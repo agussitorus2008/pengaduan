@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "a8827a67-c09c-4af0-9eb6-3d198d810f69",
+		"name": "Pengaduan Kerja",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20974683"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@mail.com\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Pengajuan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"kategori\": \"Enhancement Request\",\r\n  \"judul\": \"New Feature Proposal\",\r\n  \"isi\": \"I propose a new feature that would enhance the user experience.\",\r\n  \"lampiran\": \"proposal.pdf\",\r\n  \"tanggal\": \"2023-02-01T14:30:00.000Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Pengaduan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiYjQ0NGViNjEtMTQ0My00NmZkLWE1ZWItZmFkN2UwODc4ZWM3Iiwicm9sZSI6MCwiaWF0IjoxNzAyMzcyOTU4LCJleHAiOjE3MDI5Nzc3NTh9.WgMVO0F1_LRNGicUKQwU0XQa2Fdp7Ec-4r4-tIKguPs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail Pengaduan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiYjQ0NGViNjEtMTQ0My00NmZkLWE1ZWItZmFkN2UwODc4ZWM3Iiwicm9sZSI6MCwiaWF0IjoxNzAyMzcyOTU4LCJleHAiOjE3MDI5Nzc3NTh9.WgMVO0F1_LRNGicUKQwU0XQa2Fdp7Ec-4r4-tIKguPs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/report/1b388202-d32f-401b-8c40-c439a9e049f1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"report",
+						"1b388202-d32f-401b-8c40-c439a9e049f1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Setujui Pengajuan",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\" : \"1\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/report/1b388202-d32f-401b-8c40-c439a9e049f1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"report",
+						"1b388202-d32f-401b-8c40-c439a9e049f1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tolak Pengajuan",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\" : \"2\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/report/1b388202-d32f-401b-8c40-c439a9e049f1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"report",
+						"1b388202-d32f-401b-8c40-c439a9e049f1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
