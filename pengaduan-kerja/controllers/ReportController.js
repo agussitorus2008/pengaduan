@@ -10,6 +10,7 @@ export const createReport = async (req, res) => {
             res.status(400).json({ errors: errors.array() });
             return;
         }
+        // 
 
         const report = await ReportModel.create({
             kategori: req.body.kategori,
